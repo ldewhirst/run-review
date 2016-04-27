@@ -1,0 +1,17 @@
+<h1>Add Race</h1>
+
+<div>
+  <div ng-repeat="race in races | orderBy: '-rating'">
+<!--        {{ race.name }} - distance: {{ race.distance }} - rating: {{ race.rating }}-->
+  </div>
+</div>
+
+<form ng-submit="addRace()">
+  <input type="text" placeholder="Name" ng-model="name">
+  <br>
+  <input type="text" placeholder="Distance" ng-model="distance">
+  <br>
+  <input type="text" placeholder="Rating" ng-model="rating">
+  <br>
+  <button type="submit">Add Race</button>
+</form>
