@@ -21,7 +21,9 @@
           return res.data;
         });
       };
-    };
+    return o;
+    
+  };
   
   angular
     .module('runReview')

@@ -1,8 +1,6 @@
 (function() {
-  function RaceCtrl ($scope, races, race) {
-    
-    $scope.race = race;
-    
+  function RaceCtrl ($scope, Races) {
+        
     $scope.addReview = function(){
       if($scope.body === '') {return;}
       $scope.race.reviews.push({
@@ -17,6 +15,6 @@
   
   angular
     .module('runReview')
-    .controller('RaceCtrl', ['$scope', 'races', 'race', RaceCtrl]);
+    .controller('RaceCtrl', ['$scope', 'Races', RaceCtrl]);
 
 })();

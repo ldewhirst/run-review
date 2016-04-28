@@ -1,22 +1,22 @@
 (function() {
-  function config($stateProvider, $locationProvider) {
+  function config($stateProvider) {
     
-    $locationProvider
-      .html5Mode({
-        enabled: true,
-        requireBase: false  
-    });
-    
+//    $locationProvider
+//      .html5Mode({
+//        enabled: true,
+//        requireBase: false  
+//    });
+//    
     $stateProvider
       .state('home', {
         url: '/home',
-        templateUrl: '/templates/landing.html',
+        templateUrl: '/templates/home.html',
         controller: 'MainCtrl',
-        resolve: {
-          racePromise: ['races', function(races){
-            return races.getAll();
-          }]
-        }
+//        resolve: {
+//          racePromise: ['races', function(races){
+//            return races.getAll();
+//          }]
+//        }
       })
     
       .state('addRace', {
@@ -34,14 +34,14 @@
         url: '/races/{id}',
         templateUrl: '/races.html',
         controller: 'RaceCtrl',
-        resolve: {
-          race: ['$stateParams', 'races', function($stateParams, races) {
-            return races.get($stateParams.id);
-          }]
-        }
+//        resolve: {
+//          race: ['$stateParams', 'races', function($stateParams, races) {
+//            return races.get($stateParams.id);
+//          }]
+//        }
       });
     
-    $urlRouterProvider.otherwise('home');
+//    $urlRouterProvider.otherwise('home');
   };
 
   angular
