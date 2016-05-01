@@ -1,6 +1,20 @@
 (function() {
   function RaceCtrl ($scope, Races) {
-        
+
+  $scope.races = [];
+
+  $scope.addNewRace = function(raceData) {
+    if (!$scope.name || $scope.name === '') { return; }
+    $scope.races.push({
+      name: $scope.name,
+      distance: $scope.distance,
+      rating: $scope.rating
+    });
+    $scope.name = '';
+    $scope.distance = '';
+    $scope.rating = '';
+  };
+
     $scope.addReview = function(){
       if($scope.body === '') {return;}
       $scope.race.reviews.push({
@@ -11,8 +25,8 @@
       $scope.body = '';
     };
   };
-  
-  
+
+
   angular
     .module('runReview')
     .controller('RaceCtrl', ['$scope', 'Races', RaceCtrl]);

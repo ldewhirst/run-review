@@ -1,22 +1,11 @@
 (function() {
-  
-  function MainCtrl($scope) {
-        
-    $scope.addRace = function() {
-      if (!$scope.name || $scope.name === '') { return; }
-      $scope.races.push({
-        name: $scope.name, 
-        distance: $scope.distance, 
-        rating: $scope.rating
-      });
-      $scope.name = '';
-      $scope.distance = '';
-      $scope.rating = '';
-    };
+
+  function MainCtrl() {
+
   }
-  
+
   angular
     .module('runReview')
-    .controller('MainCtrl', ['$scope', MainCtrl]);
-  
+    .controller('MainCtrl', [MainCtrl]);
+
 })();
