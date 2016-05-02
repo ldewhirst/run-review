@@ -1,7 +1,7 @@
 (function() {
   function RaceCtrl ($scope, Races) {
 
-  $scope.races = [];
+  $scope.races = Races.races;
 
   $scope.addNewRace = function(raceData) {
     if (!$scope.name || $scope.name === '') { return; }

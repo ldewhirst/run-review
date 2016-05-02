@@ -4,46 +4,45 @@
     <title>Run Review</title>
   </head>
   <body ng-app="runReview">
-<!--
-    <nav class="navbar navbar-default pull-right" ng-controlller="NavCtrl">
-      <ul class="nav navbar-nav">
-        <li ng-show="isLoggedIn()"><a>{{ currentUser() </a></li>
-        <li ng-show="isLoggedIn()"><a href="" ng-click="signOut()">Sign Out</a></li>
-        <li ng-show="isLoggedIn()"><a ui-sref="signin">Sign In</a></li>
-        <li ng-show="isLoggedIn()"><a ui-sref="signup">Sign Up</a></li>
-      </ul>
-    </nav>
--->
-    
-    <div>
-      <a ui-sref="home">Home</a>
-      <a ui-sref="raceIndex">Race Index</a>
-      <a ui-sref="addRace">Add Race</a>
-    </div>
-
-      <div ng-show="error" class="alert alert-danger row">
-        <span>{{ error.message }}</span>
-      </div>
-
-    <div>
-      <form ng-submit="signup()"
-            style="margin-top:30px;">
-        <h3>Sign Up</h3>
-
-        <div class="form-group">
-          <input type="text"
-                 class="form-control"
-                 placeholder="username"
-                 ng-model="user.username">
+    <div class="row">
+      <div class="col-md6 col-md-offset-3">
+        <div class="page-header">
+          <h1>Run Review</h1>
         </div>
-        <button type="submit" class="btn btn-primary">Sign Up</button>
-      </form>
+
+        <div>
+          <a ui-sref="home">Home</a>
+          <a ui-sref="raceIndex">Race Index</a>
+          <a ui-sref="addRace">Add Race</a>
+        </div>
+
+          <div ng-show="error" class="alert alert-danger row">
+            <span>{{ error.message }}</span>
+          </div>
+
+        <div>
+          <form ng-submit="signup()"
+                style="margin-top:30px;">
+            <h3>Sign Up</h3>
+
+            <div class="form-group">
+              <input type="text"
+                     class="form-control"
+                     placeholder="username"
+                     ng-model="user.username">
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+          </form>
+        </div>
+      </div>
     </div>
 
     <ui-view></ui-view>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="/javascripts/angularApp.js"></script>
     <script src="/javascripts/services/Races.js"></script>
     <script src="/javascripts/controllers/MainCtrl.js"></script>

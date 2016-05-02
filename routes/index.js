@@ -17,7 +17,7 @@ router.get('/', function(req, res) {
   res.render('index');
 });
 
-router.get('/raceindex', function(req, res, next) {
+router.get('/races', function(req, res, next) {
   Race.find(function(err, races) {
     if(err){ return next(err); }
 
@@ -25,10 +25,10 @@ router.get('/raceindex', function(req, res, next) {
   });
 });
 
-router.post('/addrace', auth, function(req, res, next) {
+router.post('/races', auth, function(req, res, next) {
   var race = new Race(req.name);
   // race.runner = req.payload.username;
-  
+
   race.save(function(err, race){
     if(err){ return next(err); }
 
