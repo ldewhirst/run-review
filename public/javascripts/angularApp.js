@@ -1,38 +1,38 @@
 (function() {
   function config($stateProvider, $locationProvider) {
-    
+
     $locationProvider
       .html5Mode({
         enabled: true,
-        requireBase: false  
+        requireBase: false
     });
-    
+
     $stateProvider
       .state('home', {
         url: '/',
         templateUrl: '/templates/home.html',
         controller: 'MainCtrl'
       })
-    
+
       .state('addRace', {
         url: '/addRace',
         templateUrl: '/templates/addRace.html',
         controller: 'RaceCtrl'
       })
-    
+
       .state('raceIndex', {
-        url: '/races',
+        url: '/raceIndex',
         templateUrl: '/templates/raceIndex.html',
         controller: 'BrowseCtrl',
         resolve: {
           racePromise: ['Races', function(races){
-            return races.getAll();
+            return races.getRaces();
           }]
         }
       })
-    
+
       .state('races', {
-        url: '/races/{id}',
+        url: '/races/:race',
         templateUrl: '/races.html',
         controller: 'RaceCtrl',
 //        resolve: {
@@ -41,7 +41,7 @@
 //          }]
 //        }
       })
-    
+
     .state('signin', {
       url: '/signin',
       templateUrl:'/login.html',
@@ -52,7 +52,7 @@
 //        }
 //      }]
     })
-    
+
     .state('register', {
       url: '/register',
       templateUrl: '/register.html',
@@ -63,7 +63,7 @@
 //        }
 //      }]
     });
-    
+
 //    $urlRouterProvider.otherwise('home');
   };
 

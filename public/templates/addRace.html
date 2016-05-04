@@ -1,12 +1,12 @@
 <h1>Add Race</h1>
 
-<div>
+<!-- <div>
   <div ng-repeat="race in races | orderBy: '-rating'">
-<!--        {{ race.name }} - distance: {{ race.distance }} - rating: {{ race.rating }}-->
+       {{ race.name }} - distance: {{ race.distance }} - rating: {{ race.rating }}
   </div>
-</div>
+</div> -->
 
-<form ng-submit="addRace()">
+<form ng-submit="addNewRace()">
   <input type="text" placeholder="Name" ng-model="name">
   <br>
   <input type="text" placeholder="Distance" ng-model="distance">
@@ -14,10 +14,4 @@
   <input type="text" placeholder="Rating" ng-model="rating">
   <br>
   <button type="submit">Add Race</button>
-</form>
-
-<form action="/templates/raceindex.html" method="POST">
-  <input type="text" placeholder="name" name="name">
-  <input type="text" placeholder="distance" name="distance">
-  <button type "submit">Submit</button>
 </form>

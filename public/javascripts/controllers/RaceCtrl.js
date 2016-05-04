@@ -3,9 +3,9 @@
 
   $scope.races = Races.races;
 
-  $scope.addNewRace = function(raceData) {
+  $scope.addNewRace = function() {
     if (!$scope.name || $scope.name === '') { return; }
-    $scope.races.push({
+    Races.create({
       name: $scope.name,
       distance: $scope.distance,
       rating: $scope.rating
