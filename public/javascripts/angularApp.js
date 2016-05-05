@@ -17,7 +17,7 @@
       .state('addRace', {
         url: '/addRace',
         templateUrl: '/templates/addRace.html',
-        controller: 'RaceCtrl'
+        controller: 'AddRaceCtrl'
       })
 
       .state('raceIndex', {
@@ -33,13 +33,14 @@
 
       .state('races', {
         url: '/races/:race',
-        templateUrl: '/races.html',
+        templateUrl: '/templates/races.html',
         controller: 'RaceCtrl',
-//        resolve: {
-//          race: ['$stateParams', 'races', function($stateParams, races) {
-//            return races.get($stateParams.id);
-//          }]
-//        }
+        resolve: {
+          race: ['$stateParams', 'Races', function($stateParams, races) {
+            console.log($stateParams.race);
+            return races.get($stateParams.race);
+          }]
+        }
       })
 
     .state('signin', {

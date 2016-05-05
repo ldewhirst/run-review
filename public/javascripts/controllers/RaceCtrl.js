@@ -1,19 +1,10 @@
 (function() {
-  function RaceCtrl ($scope, Races) {
-
-  $scope.races = Races.races;
-
-  $scope.addNewRace = function() {
-    if (!$scope.name || $scope.name === '') { return; }
-    Races.create({
-      name: $scope.name,
-      distance: $scope.distance,
-      rating: $scope.rating
-    });
-    $scope.name = '';
-    $scope.distance = '';
-    $scope.rating = '';
-  };
+  function RaceCtrl ($stateParams, $scope, Races, race) {
+    $scope.race = race;
+    // console.log($stateParams);
+    //
+    // $scope.race = Races.get($stateParams.race);
+    // console.log($scope.race);
 
     $scope.addReview = function(){
       if($scope.body === '') {return;}
@@ -29,6 +20,6 @@
 
   angular
     .module('runReview')
-    .controller('RaceCtrl', ['$scope', 'Races', RaceCtrl]);
+    .controller('RaceCtrl', ['$stateParams', '$scope', 'Races', 'race', RaceCtrl]);
 
 })();

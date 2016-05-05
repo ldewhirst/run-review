@@ -18,6 +18,7 @@
 
       o.get = function(id) {
         return $http.get('/races/' + id).then(function(res){
+          console.log(res.data);
           return res.data;
         });
       };

@@ -47,6 +47,7 @@ router.param('race', function(req, res, next, id) {
 });
 
 router.get('/races/:race', function(req, res) {
+  console.log(req.race);
   res.json(req.race);
 });
 
