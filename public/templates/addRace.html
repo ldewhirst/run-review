@@ -5,13 +5,14 @@
        {{ race.name }} - distance: {{ race.distance }} - rating: {{ race.rating }}
   </div>
 </div> -->
-
-<form ng-submit="addNewRace()">
-  <input type="text" placeholder="Name" ng-model="name">
-  <br>
-  <input type="text" placeholder="Distance" ng-model="distance">
-  <br>
-  <input type="text" placeholder="Rating" ng-model="rating">
-  <br>
-  <button type="submit">Add Race</button>
-</form>
+<div class="center-div" ng-controller="AddRaceCtrl">
+  <form novalidate class="simple-form" ng-submit="addNewRace()">
+    <input type="text" placeholder="Name" ng-model="name">
+    <br>
+    <input type="text" placeholder="Distance" ng-model="distance">
+    <br>
+    <input type="text" placeholder="Rating" ng-model="rating">
+    <br>
+    <button type="submit">Add Race</button>
+  </form>
+</div>

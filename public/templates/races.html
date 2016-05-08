@@ -1,18 +1,26 @@
 <h1>Races</h1>
 
   <div>
-    <h3>
-      {{ race }}
-    </h3>
+    <h2>
+      {{ race.name }}
+    </h2>
+    <p>
+      {{ race.location }}
+    </p>
+    <p>
+      {{ race.distance }}
+    </p>
+    <p>
+      {{ race.rating }}
+    </p>
   </div>
 
-  <!-- <div ng-repeat="review in race.reviews">
+  <div ng-repeat="review in race.reviews">
     - by {{ review.runner }}
     <span style="font-size:20px; margin-left:10px;">
       {{ review.body }}
     </span>
   </div> -->
-<!--
 <form ng-submit="addReview()"
       style="margin-top:30px;">
   <h3>Add a new review</h3>
@@ -24,4 +32,4 @@
            ng-model="body">
   </div>
   <button type="submit" class="btn btn-primary">Submit Review</button>
-</form> -->
+</form>
