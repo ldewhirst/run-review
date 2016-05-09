@@ -8,10 +8,11 @@
 
     $scope.addReview = function(){
       if($scope.body === '') {return;}
-      $scope.race.reviews.push({
+      Races.addReview(race._id, {
         body: $scope.body,
         runner: 'user',
-        rating: 0
+      }).success(function(review){
+        $scope.race.reviews.push(review);
       });
       $scope.body = '';
     };

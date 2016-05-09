@@ -72,7 +72,9 @@ router.param('review', function(req, res, next, id) {
 // });
 
 router.post('/races/:race/reviews', function(req, res, next) {
+  console.log(req.body);
   var review = new Review(req.body);
+  console.log(req.race);
   review.race = req.race;
 
   review.save(function(err, review){
