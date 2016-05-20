@@ -46,9 +46,36 @@ router.param('race', function(req, res, next, id) {
   });
 });
 
-router.get('/races/:race', function(req, res) {
-  console.log(req.race);
-  res.json(req.race);
+router.get('/races/:race', function(req, res, next) {
+  req.race.populate('reviews', function(err, race) {
+    if(err){ return next(err); }
+
+    res.json(race);
+  });
+});
+
+// router.put('/races/:race/rating', function(req, res, next) {
+//   req.post.upvote(function(err, race){
+//     if (err) { return next(err); }
+//
+//     res.json(post);
+//   });
+// });
+
+router.post('/races/:race/reviews', function(req, res, next) {
+  // req.body is the data we want to save to the review
+  var review = new Review(req.body);
+  review.race = req.race;
+
+  review.save(function(err, review){
+    if(err){ return next(err); }
+    // why is it only pushing the string of the id and not the entire object????
+    req.race.reviews.push(review);
+    req.race.save(function(err, race){
+      if(err){ return next(err); }
+      res.json(review);
+    });
+  });
 });
 
 router.param('review', function(req, res, next, id) {
@@ -63,31 +90,9 @@ router.param('review', function(req, res, next, id) {
   });
 });
 
-// router.put('/races/:race/rating', function(req, res, next) {
-//   req.post.upvote(function(err, race){
-//     if (err) { return next(err); }
-//
-//     res.json(post);
-//   });
-// });
-
-router.post('/races/:race/reviews', function(req, res, next) {
-  console.log(req.body);
-  var review = new Review(req.body);
-  console.log(req.race);
-  review.race = req.race;
-
-  review.save(function(err, review){
-    if(err){ return next(err); }
-
-    req.race.reviews.push(review);
-    req.race.save(function(err, race) {
-      if(err){ return next(err); }
-      res.json(review);
-    });
-  });
+router.get('/races/:race/reviews', function(req, res) {
+  res.json(req.race.reviews);
 });
-
 // router.post('/signup', function(req, res, next){
 //   if (!req.body.username || !req.body.password){
 //     return res.status(400).json({message: 'Please complete all required fields'});

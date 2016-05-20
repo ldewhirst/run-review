@@ -1,9 +1,13 @@
 var mongoose = require('mongoose');
+var db = mongoose.connection;
+var Schema = mongoose.Schema;
+var ObjectId = Schema.ObjectId;
 
-var ReviewSchema = new mongoose.Schema({
+var ReviewSchema = new Schema({
   body: String,
   runner: String,
+  rating: String,
   race: { type: mongoose.Schema.Types.ObjectId, ref: 'Race' }
 });
 
-mongoose.model('Review', ReviewSchema);
+exports.Race = mongoose.model('Review', ReviewSchema);

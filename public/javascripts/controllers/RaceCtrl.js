@@ -8,7 +8,7 @@
 
     $scope.addReview = function(){
       if($scope.body === '') {return;}
-      Races.addReview(race._id, {
+      Races.addReview(race, {
         body: $scope.body,
         runner: 'user',
       }).success(function(review){

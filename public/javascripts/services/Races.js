@@ -23,9 +23,9 @@
         });
       };
 
-      o.addReview = function(id, review) {
-      return $http.post('/races/' + id + '/reviews', review);
-    };
+      o.addReview = function(race, review) {
+        return $http.post('/races/' + race._id + '/reviews', review);
+      };
 
     return o;
 
