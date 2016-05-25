@@ -6,7 +6,7 @@ var ObjectId = Schema.ObjectId;
 var ReviewSchema = new Schema({
   body: String,
   runner: String,
-  rating: String,
+  rating: Number,
   race: { type: mongoose.Schema.Types.ObjectId, ref: 'Race' }
 });
 

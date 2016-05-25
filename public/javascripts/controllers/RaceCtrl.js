@@ -11,11 +11,14 @@
       Races.addReview(race, {
         body: $scope.body,
         runner: 'user',
+        score: 0
       }).success(function(review){
         $scope.race.reviews.push(review);
       });
       $scope.body = '';
+      $scope.runner = '';
     };
+
   };
 
 
