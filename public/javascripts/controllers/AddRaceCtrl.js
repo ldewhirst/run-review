@@ -8,11 +8,11 @@
       Races.create({
         name: $scope.name,
         distance: $scope.distance,
-        rating: $scope.rating
+        location: $scope.location
       });
       $scope.name = '';
       $scope.distance = '';
-      $scope.rating = '';
+      $scope.location = '';
     };
   };
 

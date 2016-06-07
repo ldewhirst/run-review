@@ -69,6 +69,6 @@
   };
 
   angular
-    .module('runReview', ['ui.router', 'ui.bootstrap'])
+    .module('runReview', ['ui.router'])
     .config(config);
 })();

@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/addrace.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/races.css">
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -24,28 +26,12 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a ui-sref="raceIndex">Races</a></li>
-            <li><a ui-sref="addRace">New Race</a></li>
+            <li><a ui-sref="raceIndex">View Races</a></li>
+            <li><a ui-sref="addRace">Add New Race</a></li>
         </ul>
       </div>
     </nav>
 
-
-<!--
-        <div>
-          <form ng-submit="signup()"
-                style="margin-top:30px;">
-            <h3>Sign Up</h3>
-
-            <div class="form-group">
-              <input type="text"
-                     class="form-control"
-                     placeholder="username"
-                     ng-model="user.username">
-            </div>
-            <button type="submit" class="btn btn-primary">Sign Up</button>
-          </form>
-        </div> -->
       <div>
         <ui-view></ui-view>
       </div>
@@ -59,6 +45,5 @@
     <script src="/javascripts/controllers/AddRaceCtrl.js"></script>
     <script src="/javascripts/controllers/RaceCtrl.js"></script>
     <script src="/javascripts/controllers/BrowseCtrl.js"></script>
-    <script src="/javascripts/directives/ratings.js"></script>
   </body>
 </html>

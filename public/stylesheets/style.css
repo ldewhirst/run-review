@@ -10,3 +10,54 @@ a {
 .nav, .pagination, .carousel, .panel-title a {
   cursor: pointer;
 }
+
+.well {
+  background: white;
+  text-align: center;
+}
+
+.btn-run {
+  color: #ffffff;
+  background-color: #2A879E;
+  border-color: #693702;
+}
+
+.btn-run:hover,
+.btn-run:focus,
+.btn-run:active,
+.btn-run.active,
+.open .dropdown-toggle.btn-run {
+  color: #ffffff;
+  background-color: #124754;
+  border-color: #693702;
+}
+
+.btn-run:active,
+.btn-run.active,
+.open .dropdown-toggle.btn-run {
+  background-image: none;
+}
+
+.btn-run.disabled,
+.btn-run[disabled],
+fieldset[disabled] .btn-run,
+.btn-run.disabled:hover,
+.btn-run[disabled]:hover,
+fieldset[disabled] .btn-run:hover,
+.btn-run.disabled:focus,
+.btn-run[disabled]:focus,
+fieldset[disabled] .btn-run:focus,
+.btn-run.disabled:active,
+.btn-run[disabled]:active,
+fieldset[disabled] .btn-run:active,
+.btn-run.disabled.active,
+.btn-run[disabled].active,
+fieldset[disabled] .btn-run.active {
+  background-color: #2A879E;
+  border-color: #693702;
+}
+
+.btn-run .badge {
+  color: #2A879E;
+  background-color: #ffffff;
+}

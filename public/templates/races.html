@@ -15,7 +15,9 @@
   <div ng-repeat="review in race.reviews">
     - by {{ review.runner }}
       <br>
+      <p>{{ review.rating }}</p>
       <p>{{ review.body }}</p>
+
   </div>
 
 <form ng-submit="addReview()"
@@ -30,7 +32,7 @@
     <input type="number"
            class="form-control"
            placeholder="rating"
-           ng-model="score">
+           ng-model="rating">
   </div>
   <button type="submit" class="btn btn-primary">Submit Review</button>
 </form>
