@@ -1,19 +1,40 @@
-.container-fluid {
-  margin: 0 auto;
+.hero-content {
+    position: relative;
+    min-height: 600px;
+    background-image: url(/images/run.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
-/*
-section {
-  position: relative;
-  min-height: 600px;
-  background-image: url(../images/race_finish.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}*/
 
-.head {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-weight: bold;
-  letter-spacing: -1px;
-  line-height: 1;
+.hero-content .hero-title {
+    position: absolute;
+    top: 10%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    font-size: 8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    text-shadow: 1px 1px 0px rgb(255,255,255);
+}
+
+.hero-content .hero-text {
+    position: absolute;
+    botton: 10%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    text-shadow: 1px 1px 0px rgb(255,255,255);
 }
